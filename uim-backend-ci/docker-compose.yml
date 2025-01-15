@@ -26,16 +26,13 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongo
 
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: nureclamor1s/uim:latest
     container_name: backend
     ports:
       - "18081:18081"
     depends_on:
       - mongo
     environment:
-#      SPRING_PROFILES_ACTIVE: docker
       MAP_DB_URI: mongo
 
 #  user-service:
